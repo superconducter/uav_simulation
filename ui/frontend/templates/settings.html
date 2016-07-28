@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+{% block title %}Settings{% endblock %}
+
+{% block head %}
+
+    <!-- Settings-->
+    <link rel="stylesheet" href="{% static "assets/css/settings.css" %}" />
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h2>Settings</h2>
+
+
+      <form name="properties" id="change_properties" action="#" style="display: none">
+          <div>
+              <p>Change properties:</p>
+              <p><label for="maxSpeed">Max Speed: </label><br><input type="number" name="maxSpeed" value="20" id="txt_maxSpeed"></p>
+              <p><label for="distance">Distance: </label><br><input type="number" name="distance" value="0" id="txt_distance"></p>
+
+              <p><input type="button" name="submit" value="submit" onclick="processFormData();" /></p>
+          </div>
+          <a href="javascript:toggleFormVisibility();" id="cancel" style="display: none">Cancel</a>
+      </form>
+    </div>
+
+{% endblock %}
+{% block jsfooter %}
+<script type="text/javascript" src="{% static "assets/js/settings.js" %}" ></script>
+{% endblock %}

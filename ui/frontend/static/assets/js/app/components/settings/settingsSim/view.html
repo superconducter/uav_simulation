@@ -1,0 +1,82 @@
+<button ng-click="addUseCase()" class="btn btn-default">Add Use Case</button>
+<div ng-repeat="usecase in settings.UseCase track by $index">
+    <h3>Use Case  <div class="btn btn-default" ng-click="settings.UseCase.splice($index,1)">Remove</div> </h3>
+    <div class="form-group">
+        <select class="form-control" name="objectTypeSelect" ng-model="usecase.Type">
+            <option value="Delivery">Delivery</option>
+            <option value="Advertisment">Advertisement</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <p><b>Charging Stations</b></p>
+        <div ng-repeat="agent in usecase.ChargingStation">
+            <label>X</label>
+            <input placeholder="X" type="number" ng-model="agent.x" />
+            <label>Y</label>
+            <input placeholder="Y" type="number" ng-model="agent.y" />
+            <label>LX</label>
+            <input placeholder="LX" type="number" ng-model="agent.lx" />
+            <label>LY</label>
+            <input placeholder="LY" type="number" ng-model="agent.ly" />
+        </div>
+    </div>
+    <div class="form-group">
+        <p><b>Building</b></p>
+        <div ng-repeat="agent in usecase.Building">
+            <label>X</label>
+            <input placeholder="X" type="number" ng-model="agent.x" />
+            <label>Y</label>
+            <input placeholder="Y" type="number" ng-model="agent.y" />
+            <label>LX</label>
+            <input placeholder="LX" type="number" ng-model="agent.lx" />
+            <label>LY</label>
+            <input placeholder="LY" type="number" ng-model="agent.ly" />
+        </div>
+        <button class="btn btn-default" ng-click="addItTo({}, usecase.Building)">Add Building</button>
+    </div>
+    <div class="form-group">
+        <p><b>Wind</b></p>
+        <div ng-repeat="agent in usecase.Wind">
+            <label>X</label>
+            <input placeholder="X" type="number" ng-model="agent.x" />
+            <label>Y</label>
+            <input placeholder="Y" type="number" ng-model="agent.y" />
+            <label>LX</label>
+            <input placeholder="LX" type="number" ng-model="agent.lx" />
+            <label>LY</label>
+            <input placeholder="LY" type="number" ng-model="agent.ly" />
+        </div>
+        <button class="btn btn-default" ng-click="addItTo({}, usecase.Wind)">Add Wind</button>
+    </div>
+    <div class="form-group">
+        <p><b>UAV</b></p>
+        <div ng-repeat="agent in usecase.UAV">
+            <label>X</label>
+            <input placeholder="X" type="number" ng-model="agent.x" />
+            <label>Y</label>
+            <input placeholder="Y" type="number" ng-model="agent.y" />
+            <label>LX</label>
+            <input placeholder="LX" type="number" ng-model="agent.lx" />
+            <label>LY</label>
+            <input placeholder="LY" type="number" ng-model="agent.ly" />
+        </div>
+        <button class="btn btn-default" ng-click="addItTo({}, usecase.UAV)">Add UAV</button>
+    </div>
+    <div class="form-group">
+        <label>X-Achsis</label>
+        <input placeholder="X-Axis" type="number" ng-model="usecase.axisX" />
+        <label>Y-Achsis</label>
+        <input placeholder="Y-Axis" type="number" ng-model="usecase.axisY" />
+        <br>
+        <label>No. of rounds</label>
+        <input placeholder="No. of rounds" type="number" ng-model="usecase.Round" />
+        <label>Speed</label>
+        <input placeholder="Speed" type="number" ng-model="usecase.Speed" />
+        <br>
+        <label>Sensors</label>
+        <input placeholder="Sensors" type="number" ng-model="usecase.Sensors" />
+        <label>No. of Sensors</label>
+        <input placeholder="No. of Sensors" type="number" ng-model="usecase.Nr_Sensors" />
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+
+<div>
+    <div ng-hide="response.results.length == 0 && !view.search" class="form-inline">
+    <div ng-class="response.previous != null ? '' : 'disabled'" class="btn btn-default" ng-click="load(response.previous)">Previous</div>
+    <div ng-class="response.next ? '' : 'disabled'" class="btn btn-default" class="btn btn-default" ng-click="load(response.next)">Next</div>
+    <div><p>Displaying {{view.offset + 1}} to {{ view.upperLimit}}</p></div>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Round</th>
+        <th>Identifier</th>
+        <th>Status</th>
+          <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="drone in drones">
+        <td>{{drone.round}}</td>
+        <td>{{drone.identifier}}</td>
+        <td>{{drone.status}}</td>
+          <td>{{drone.lat}}, {{drone.lng}}</td>
+      </tr>
+    </tbody>
+  </table>
+        </div>
+
+    <div ng-show="response.results.length == 0">
+        <p>There are no drones, yet. Start a simulation at the <a href="#/settings">Settings</a> view.</p>
+    </div>
+
+</div>

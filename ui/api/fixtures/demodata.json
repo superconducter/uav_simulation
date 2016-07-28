@@ -1,0 +1,51 @@
+[
+  {
+    "model": "core.simulation",
+    "pk": 1,
+    "fields": {
+      "name": "Demo Round"
+    }
+  },
+  {
+    "model": "core.round",
+    "pk": 1,
+    "fields": {
+      "Simulation": 1
+    }
+  },
+  {
+    "model": "core.round",
+    "pk": 2,
+    "fields": {
+      "Simulation": 1
+    }
+  },
+  {
+    "model": "core.drone",
+    "pk": 1,
+    "fields": {
+      "round": 1,
+      "power": 0.53,
+      "lat": 50.0,
+      "lng": 50.0
+    }
+  },
+  {
+    "model": "core.drone",
+    "pk": 2,
+    "fields": {
+      "round": 2,
+      "power": 0.49,
+      "lat": 51.0,
+      "lng": 50.0
+    }
+  },
+  {
+    "model": "core.obstacle",
+    "pk": 1,
+    "fields": {
+      "borders": "Not yet defined",
+      "simulation": 1
+    }
+  }
+]

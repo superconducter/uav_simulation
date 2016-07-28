@@ -1,0 +1,163 @@
+<flash-message></flash-message>
+
+<div class="row map-container">
+    <div class="col-md-9">
+        <div id="map" style=""></div>
+
+        <footer class="lp">
+            <div class="transport">
+                <div class="playback-navbar">
+                    <div class="playback-navbar-inner">
+                        <ul class="nav">
+                            <li class="ctrl">
+                                <button id="stop" class="btn btn-primary"><i id="stop-icon"
+                                                                             class="fa fa-stop fa-lg"></i></button>
+                            </li>
+                            <li class="ctrl">
+                                <button id="play-pause" class="btn btn-primary"><i id="play-pause-icon"
+                                                                                   class="fa fa-play fa-lg"></i>
+                                </button>
+                            </li>
+                            <li class="ctrl">
+                                <button id="step-backward" class="btn btn-primary"><i id="step-backward-icon"
+                                                                                      class="fa fa-step-backward fa-lg"></i>
+                                </button>
+                            </li>
+                            <li class="ctrl">
+                                <button id="step-forward" class="btn btn-primary"><i id="step-forward-icon"
+                                                                                     class="fa fa-step-forward fa-lg"></i>
+                                </button>
+                            </li>
+                            <li class="ctrl">
+                                <button id="clock-btn" class="clock btn btn-primary"></button>
+                            </li>
+                            <li>
+                                <div id="time-slider"></div>
+                            </li>
+                            <li class="ctrl">
+                                <button id="center-map" class="btn btn-primary"><i id="center-map-icon"
+                                                                                   class="fa fa-dot-circle-o fa-lg"></i>
+                                </button>
+                            </li>
+                            <li class="ctrl dropup">
+                                <button id="speed-btn" style="margin-right:5px; margin-left; width:90px !important" ;
+                                        class="btn btn-primary" data-toggle="dropdown"><i
+                                        class="fa fa-dashboard fa-lg"></i> <span id="speed-icon-val"
+                                                                                 class="speed">1</span>x
+                                </button>
+                                <div class="speed-menu dropdown-menu" role="menu" aria-labelledby="speed-btn">
+                                    <label>Playback<br/>Speed</label>
+                                    <input id="speed-input" class="span1 speed" type="text" value="1"/>
+                                    <div id="speed-slider"></div>
+                                </div>
+                            </li>
+                            <li class="ctrl">
+                                <button id="toggle-settings" class="btn btn-primary"><i id="wrench-icon"
+                                                                                        class="fa fa-wrench fa-lg"></i>
+                                </button>
+                            </li>
+                            <li class="newdata">
+                                <button id="loading" style="display:none"
+                                        class="btn btn-primary"><i class="fa fa-refresh fa-spin"></i></button>
+
+                                <button id="newdata" style=" display: none;" class="btn btn-info btn-block"
+                                        onClick="window.location.reload(true)"><i class="fa fa-refresh"></i> Refresh
+                                    data
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <div class="col-md-3">
+        <a ng-href="#/simulations/{{simulation.id}}/statistic">
+            <div id="statisticlink" class="panel panel-default">
+                <div class="panel-body text-center">
+                    View statistic
+                </div>
+            </div>
+        </a>
+
+        <div id="events">
+
+        </div>
+
+        <div id="objectDetailsPanelMsg" class="panel panel-default">
+            <div class="panel-body text-center">
+                Click on marker to see details.
+            </div>
+        </div>
+
+        <div id="objectDetailsPanel" class="panel panel-default" style="display: none;" data-leaflet-id="">
+            <div class="panel-heading"><h4>{{ selectedPin.data.title }}</h4></div>
+            <!-- {{selectedPin.data.status}} -->
+            <!-- <span class="label label-default">{{ leafletId }}</span> -->
+            <div class="panel-body text-center"></div>
+
+            <table class="table table-striped">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td width="5"><span class="glyphicon glyphicon-user"></span></td>
+                    <td><b>Group Ids:</b> {{ selectedPin.data.groupIds }}</td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-tag"></span></td>
+                    <td><b>Type:</b> {{ selectedPin.data.type }}</td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-globe"></span></td>
+                    <td><b>Location:</b> {{ selectedPin.loc }}</td>
+                </tr>
+                <tr ng-repeat="(key, value) in selectedPin.properties">
+                    <td></td><!-- Include property icons? -->
+                    <td><b>{{ key }}:</b> {{ value }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <hr>
+
+        <div id="groupPanel"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Groups</h4>
+            </div>
+            <div class="panel-body">
+                <div ng-show="!data.groups.length" class="text-center">No groups available.</div>
+                <ul class="groups">
+                    <script type="text/ng-template" id="group-item">
+            <button type="button" class=" btn btn-warning btn-block btn-lg" onClick="window.location.reload(true)">
+                Refresh
+            </button>
+        </div>
+        <ul class="groups">
+            <script type="text/ng-template" id="group-item">
+
+                        <span>{{ group.name }}</span>
+                        <button class="btn btn-xs btn-primary pull-right" ng-click="toggleGroup($event, group)">hide
+                        </button>
+                        <ul ng-show="group.subgroups.length > 0" class="ng-hide">
+                            <!-- Recursive Rendering of all groups -->
+                            <li ng-repeat="group in group.subgroups" ng-include="'group-item'">
+                            </li>
+                        </ul>
+
+                    </script>
+
+                    <li ng-repeat="group in data.groups" ng-include="'group-item'">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<pre id="debugSettings" style="display: none;">{{ simulation.settings | json }}</pre>

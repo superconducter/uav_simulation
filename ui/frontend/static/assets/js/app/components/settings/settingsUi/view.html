@@ -1,0 +1,150 @@
+<h3>General settings</h3>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label>Show grid</label>
+            <input type="checkbox" ng-model="settings.grid"/>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label>Cluster markers</label>
+            <input type="checkbox" ng-model="settings.clusters"/>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label>Background Image URL</label>
+            <input type="text" class="form-control" ng-model="settings.backgroundImage">
+            <img ng-src="{{settings.backgroundImage}}" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <h4>Background Position Start</h4>
+        <div class="form-group">
+            <label>X</label>
+            <input type="number" class="form-control" ng-change="updateBackgroundPosition()" ng-model="view.background.start.x">
+        </div>
+        <div class="form-group">
+            <label>Y</label>
+            <input type="number" class="form-control" ng-change="updateBackgroundPosition()" ng-model="view.background.start.y">
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <h4>Background Position End</h4>
+        <div class="form-group">
+            <label>X</label>
+            <input type="number" class="form-control" ng-change="updateBackgroundPosition()" ng-model="view.background.end.x">
+        </div>
+        <div class="form-group">
+            <label>Y</label>
+            <input type="number" class="form-control" ng-change="updateBackgroundPosition()" ng-model="view.background.end.y">
+        </div>
+    </div>
+</div>
+<h3>Object Types</h3>
+<p ng-show="! (settings.objectTypes.length > 0)" class="red-text">Usually you should have at least one Object Type</p>
+<div class="row" ng-repeat="objectType in settings.objectTypes track by $index">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-default" ng-click="settings.objectTypes.splice($index,1)">Remove</button>
+        <div class="form-group">
+            <label>is static?</label>
+            <input type="checkbox" ng-model="objectType.static" ng-init="objectType.static = false"/>
+        </div>
+        <div class="form-group">
+            <label for="objectName">Object Type Name:</label>
+            <p class="red-text" ng-show="settingsCreator.objectName.$error">This field is required</p>
+            <input name="objectName" id="objectName" type="text" placeholder="Yet another simuluation" class="form-control" ng-model="objectType.name" required="">
+            <p ng-show="! (objectType.name.length > 0)" class="red-text">Please enter a name for the object</p>
+
+        </div>
+        <div class="form-group">
+        <select name="objectTypeSelect" ng-model="objectType.type" ng-options="v.value as v.label for v in view.objectTypes">
+        </select>
+        </div>
+        <div ng-show="objectType.type == 'circle'" class="form-group">
+            <label>Radius:</label>
+            <input type="text" class="form-control" ng-model="objectType.radius">
+        </div>
+        <div ng-show="objectType.type == 'rectangle'" class="form-group">
+            <label>Length:</label>
+            <input type="text" class="form-control" ng-model="objectType.length">
+        </div>
+        <div ng-show="objectType.type == 'awesome'">
+            <div class="form-group">
+                <label>Icon:</label>
+                <select name="objectTypeSelect" ng-options="icon as icon for icon in icons" ng-model="objectType.options.icon">
+                </select>
+                <div class="fa fa-4x" ng-class="'fa-' + objectType.options.icon"></div>
+            </div>
+        </div>
+        <div ng-show="objectType.type == 'icon'">
+            <div class="form-group">
+                <label>Icon Url:</label>
+                <input type="text" class="form-control" ng-model="objectType.options.iconUrl">
+            </div>
+            <div class="form-group">
+                <label>Icon Size:</label>
+                <div ng-repeat="measure in objectType.options.iconSize track by $index">
+                    <input type="text" class="form-control" ng-model="objectType.options.iconSize[$index]">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Shadow Url:</label>
+                <input type="text" class="form-control" ng-model="objectType.options.shadowUrl">
+            </div>
+            <div class="form-group">
+                <label>Shadow Size:</label>
+                <div ng-repeat="measure in objectType.options.shadowSize track by $index">
+                    <input type="text" class="form-control" ng-model="objectType.options.shadowSize[$index]">
+                </div>
+            </div>
+                <img ng-src='{{objectType.options.iconUrl}}' />
+        </div>
+        <div ng-repeat="(key, value) in objectType.status track by $index">
+            <p>Name: {{ key}}<span><button type="button" class="btn btn-default" ng-click="removeItem(objectType.status, key)">Remove</button></span></p>
+            <p>Attributes:</p>
+            <p ng-repeat="(key1, value1) in value">{{key1}}: {{value1}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>Status name:</label>
+            <input type="text" class="form-control" placeholder="f" ng-model="view.status">
+        <p ng-show="isEmpty(objectType.status)" class="red-text">Please add at least one status</p>
+        <p ng-show="!view.status.length && isEmpty(objectType.status)" class="red-text">The status name must not be null</p>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="addStatus(objectType)">Add status</button>
+    </div>
+</div>
+<button type="button" class="btn btn-default"  ng-click="addObjectType()" >Add Object type</button>
+<h3>Event Types</h3>
+<div class="row">
+    <div class="col-xs-12" ng-repeat="event in settings.eventTypes track by $index">
+        <h4>{{event.name}}</h4>
+        <div class="form-group">
+            <button type="button" class="btn btn-default" ng-click="settings.eventTypes.splice($index,1)">Remove</button>
+
+            <div class="form-group">
+                <label for="eventName">Name:</label>
+                <input id="eventName" type="text" placeholder="Yet another simuluation" class="form-control" ng-model="event.name">
+            </div>
+            <div class="form-group">
+                <label for="eventType">Type:</label>
+                <input id="eventType" type="text" placeholder="slug" class="form-control" ng-model="event.type">
+            </div>
+            <div class="form-group">
+                <label for="eventDescription">Description:</label>
+                <input id="eventDescription" type="text" placeholder="description" class="form-control" ng-model="event.description">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <button type="button" class="btn btn-default"  ng-click="addEvent()" >Add Event type</button>
+</div>

@@ -1,0 +1,18 @@
+<!--/**
+ *
+ * Visualizes a table to display round number and simulation number.
+ */-->
+   <table class="table table-hover">
+    <thead>
+      <tr>
+        <th># Round Number</th>
+        <th># Simulation Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="round in rounds">
+        <td>{{round.round_number}}</td>
+        <td>{{round.simulation}}</td>
+      </tr>
+    </tbody>
+  </table>

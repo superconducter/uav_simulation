@@ -1,0 +1,197 @@
+{
+  "Simulation": {
+    "UseCase": [
+      {
+        "ChargingStation": [
+          {
+            "lx": 5,
+            "y": 21,
+            "x": 10,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 31,
+            "x": 1,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 41,
+            "x": 3,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 11,
+            "x": 4,
+            "ly": 5
+          }
+        ],
+        "Building": [
+          {
+            "lx": 5,
+            "y": 22,
+            "x": 10,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 32,
+            "x": 20,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 42,
+            "x": 50,
+            "ly": 5
+          },
+          {
+            "lx": 5,
+            "y": 12,
+            "x": 80,
+            "ly": 5
+          }
+        ],
+        "Wind": [
+          {
+            "lx": 25,
+            "y": 50,
+            "x": 50,
+            "ly": 25
+          }
+        ],
+        "UAV": [
+          {
+            "lx": 1,
+            "y": 23,
+            "x": 10,
+            "ly": 1
+          },
+          {
+            "lx": 1,
+            "y": 33,
+            "x": 1,
+            "ly": 1
+          },
+          {
+            "lx": 1,
+            "y": 43,
+            "x": 3,
+            "ly": 1
+          },
+          {
+            "lx": 1,
+            "y": 13,
+            "x": 4,
+            "ly": 1
+          }
+        ],
+        "Type": "Delivery",
+        "axisX": 200,
+        "axisY": 200,
+        "Round": 20,
+        "Speed": 5,
+        "Sensors": 3,
+        "Nr_Sensors": 5
+      }
+    ]
+  },
+  "name": "Default Settings",
+  "ui": {
+    "clusters": true,
+    "grid": true,
+    "objectTypes": [
+      {
+        "options": {
+          "icon": "glass",
+          "markerColor": "green"
+        },
+        "status": {
+          "status": {
+            "valueOptions": [
+              {
+                "icon": "star"
+              },
+              {
+                "icon": "glass"
+              }
+            ],
+            "values": [
+              "f",
+              "l"
+            ]
+          }
+        },
+        "type": "awesome",
+        "name": "default"
+      },
+      {
+        "options": {
+          "icon": "star"
+        },
+        "status": {},
+        "type": "awesome",
+        "name": "uav"
+      },
+      {
+        "options": {
+          "height": 80,
+          "width": 10
+        },
+        "type": "rectangle",
+        "name": "Building"
+      },
+      {
+        "options": {
+          "icon": "bolt"
+        },
+        "type": "awesome",
+        "name": "wind"
+      },
+      {
+        "type": "awesome",
+        "name": "ChargingStation",
+        "options": {
+          "icon": "plug"
+        }
+      }
+    ],
+    "eventTypes": [
+      {
+        "options": {
+          "icon": "flag",
+          "markerColor": "yellow"
+        },
+        "title": "Some Event",
+        "name": "someEvent",
+        "class": "alert alert-success",
+        "description": "A package was successfully delivered.",
+        "type": "awesome"
+      },
+      {
+        "options": {
+          "icon": "flag-checkered",
+          "markerColor": "orange"
+        },
+        "title": "Another event",
+        "name": "anotherEvent",
+        "class": "alert alert-success",
+        "description": "Description for Event1.",
+        "type": "awesome"
+      },
+      {
+        "title": "Crash",
+        "name": "crash",
+        "class": "alert alert-danger",
+        "description": "UAV crashed",
+        "type": "awesome",
+        "options": {
+          "icon": "bold",
+          "markerColor": "darkred"
+        }
+      }
+    ]
+  }
+}

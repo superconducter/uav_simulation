@@ -1,0 +1,83 @@
+<!--Created by J.D. on 11.07.16.
+ *
+ * It displays all occuring simulations, all Drones, All Rounds and the link to adjust the settings for the Simcore and UI.
+ *
+ *-->
+<div class="row">
+                <div class="col-lg-3 col-md-6" ng-controller="simulationListController">
+                    <div class="panel panel-default">
+                         <a href="#/simulations">
+                        <div class="panel-heading" style="align-items: center">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-play-circle-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{statistics.simulations}}</div>
+                                    <div>Simulations</div>
+                                </div>
+                            </div>
+                        </div>
+                             </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-default">
+                         <a href="#/drones">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-fighter-jet fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{statistics.agents}}</div>
+                                    <div>Drones</div>
+                                </div>
+                            </div>
+                        </div>
+                              </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-default">
+                         <a href="#/rounds">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+
+                                    <i class="fa fa-circle-o-notch fa-5x" aria-hidden="true"></i>
+
+                                        </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{statistics.rounds}}</div>
+                                    <div>Rounds</div>
+                                </div>
+                            </div>
+                        </div>
+                         </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+
+                        <div class="panel panel-default">
+                            <a href="#/settings">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+
+                                    <i class="fa fa-cogs fa-5x" aria-hidden="true"></i>
+
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">UI </div>
+                                    <div class="huge">SIMCORE </div>
+                                    <div>Settings</div>
+                                </div>
+                            </div>
+
+                        </div>
+                     </a>
+
+                    </div>
+                </div>
+            </div>

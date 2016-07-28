@@ -1,0 +1,231 @@
+<!--/**
+ * Created by J.D.
+ * Approach to display the statistics.
+ */-->
+
+<!DOCTYPE html>
+<html lang="en">
+<h1 style="margin-top:-40px;margin-bottom:40px;align: center;">Statistics-Dashboard </h1>
+
+<div class=".container">
+    <!-- 1 Graph-->
+    <div class="panel panel-default">
+        <div class="panel-heading">Use-Case: Packages:</div>
+
+            <div class="panel-body"> All packages per round
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-y='["a", "b", "c"]' bar-x='x'
+                         bar-labels='["PackagesLost", "PackagesDelivered", "PackagesNotFound"]' bar-colors='["#31C0BE", "#c7254e", "#0000FF"]'>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+       <div class="panel panel-default">
+        <div class="panel-heading">Use-Case: Packages:</div>
+
+            <div class="panel-body"> Report about all packages in all rounds
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="settingsControllerDonutPackages as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data3" bar-y='["a", "b", "c"]' bar-x='x'
+                         bar-labels='["PackagesLost", "PackagesDelivered", "PackagesNotFound"]' bar-colors='["#31C0BE", "#c7254e", "#0000FF"]'>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- 1 Graph ENDE-->
+
+    <!-- 2 Graph-->
+
+    <div class="panel panel-default">
+        <div class="panel-heading"> Use-Case: Drones:
+        </div>
+
+        <div class="panel-body"> All drones per round
+            <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController2 as Ctrl">
+                <div class="ng-cloak" bar-chart="" bar-data="data2" bar-y='["a", "b", "c"]' bar-x='x'
+                     bar-labels='["DroneActive", "DroneInactive", "DroneCrashed" ]' bar-colors='["#31C0BE", "#c7254e", "#0000FF"]'>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading"> Use-Case: Drones:
+        </div>
+         <div class="panel-body"> Report about all drones in all rounds
+            <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="settingsControllerDonutDrone as Ctrl">
+                <div class="ng-cloak" bar-chart="" bar-data="data3" bar-y='["a", "b", "c"]' bar-x='x'
+                     bar-labels='["DroneActive", "DroneInactive", "DroneCrashed"]' bar-colors='["#31C0BE", "#c7254e", "#0000FF"]'>
+                </div>
+            </div>
+        </div>
+
+    </div>
+                <!--
+          <div class="panel-body">
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b", "c"]'
+                         bar-labels='["PackagesLost", "PackagesDelivered", "PackagesNotFound"]' bar-colors='["#31C0BE", "#c7254e", "#0000FF"]'>
+                    </div>
+                </div>
+            </div>
+-->
+
+
+<!--
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div
+                            line-chart
+                            line-data='[
+                                { y: 0, a: 2, b: 0 },
+                                { y: 1, a: 1, b: 0 },
+                                { y: 2, a: 1, b: 0 },
+                                { y: 3, a: 0, b: 2 },
+                                { y: 4, a: 0, b: 1 },
+                                { y: 5, a: 1, b: 4 },
+                                { y: 6, a: 2, b: 1 },
+                                { y: 7, a: 4, b: 0 },
+                                { y: 8, a: 1, b: 0 },
+                                { y: 9, a: 3, b: 2 }
+
+                                ]'
+                            line-xkey='y'
+                            line-ykeys='["a", "b"]'
+                            line-labels='["Serie A", "Serie B"]'
+                            line-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2 Graph ENDE-->
+
+    <!-- 2 Graph-->
+    <!--
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b"]'
+                         bar-labels='["Vergleich A", "Vergleich B"]' bar-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- 2 Graph ENDE-->
+
+    <!-- 3 Graph-->
+    <!--
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b"]'
+                         bar-labels='["Vergleich A", "Vergleich B"]' bar-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- 3 Graph ENDE-->
+
+    <!-- 4 Graph-->
+    <!--
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b"]'
+                         bar-labels='["Vergleich A", "Vergleich B"]' bar-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- 4 Graph ENDE-->
+
+    <!-- 5
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b"]'
+                         bar-labels='["Vergleich A", "Vergleich B"]' bar-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 5 Graph ENDE-->
+
+    <!-- 6
+    <div class="panel panel-default">
+        <div class="panel-heading">Line Chart for XxX</div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-controller="settingsControllerDonutPackages as ctrl">
+                <div donut-chart="" donut-data="ctrl.chartData" donut-colors="ctrl.chartColors" bar-x='y'
+                     donut-formatter="ctrl.myFormatter">
+                </div>
+            </div>
+            <div class="panel-body">Eventtype 1
+                <div class="col-xs-12 col-sm-6 col-md-8" ng-controller="statisticsController as Ctrl">
+                    <div class="ng-cloak" bar-chart="" bar-data="data" bar-x='y' bar-y='["a", "b"]'
+                         bar-labels='["Vergleich A", "Vergleich B"]' bar-colors='["#31C0BE", "#c7254e"]'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--6 Graph ENDE-->
+
+</div>
+
+</body>
+</html>

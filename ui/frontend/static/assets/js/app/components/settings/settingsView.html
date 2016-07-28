@@ -1,0 +1,60 @@
+<div>
+    <div class="form-group">
+        <label>Use config of simulation: </label>
+        <select ng-options="simulation.settings as simulation.name for simulation in simulations" ng-model="selectedConfig"></select>
+    <button class="btn btn-default" ng-click="importSelectedConfig()">Import Config</button>
+    </div>
+
+    <label>Import manual data?: <input type="checkbox"
+           ng-model="showImport"></label>
+    <div ng-show="showImport" class="jumbotron">
+    <h4> Paste a complete & valid config file....</h4>
+
+
+        <label>Config file: </label>
+        <textarea class="form-control" type="text" ng-model="configFromText" rows="5"
+                  id="comment">Post here your config...</textarea>
+
+        <br/>
+        <div style="float: right;margin-top:-10px;">
+            <button type="button" class="btn btn-default"  ng-click="importConfig()" >Import Config</button>
+        </div>
+    </div>
+
+
+    <div>
+        <form name="settingsCreator" class="well">
+            <div class="form-group">
+                <label for="simulationName">Simulation Name:</label>
+                <input type="text" placeholder="Yet another simuluation" class="form-control" id="simulationName" ng-model="config.name">
+                <p ng-show="! (config.name.length > 0)" class="red-text">Please enter a name</p>
+            </div>
+            <div class="form-group">
+                <label for="simiulationDescription">Simulation Discription:</label>
+                <input type="text" placeholder="A simulation with this and that" class="form-control" id="simiulationDescription" ng-model="config.description">
+            </div>
+            <h2>Settings UI</h2>
+            <settings-ui settings="config.ui"></settings-ui>
+            <h2>Settings Sim</h2>
+            <settings-sim settings="config.Simulation"></settings-sim>
+        </form>
+        <br/>
+
+<div class="well">
+        <h3>Your actual Config:</h3>
+    <div class="form-group">
+        <label>Show final settings: </label>
+        <input type="checkbox" ng-model="ui.show_final" ng-init="ui.show_final = false">
+    </div>
+
+
+       <pre ng-show="ui.show_final">{{config | json}}</pre>
+    </div>
+        <div style="float: right;margin-top:-10px;">
+            <button type="button" class="btn btn-default"  ng-click="settingsConfigurator.$setSubmitted(); saveConfig()" >Run simulation</button>
+        </div>
+</div>
+
+
+
+

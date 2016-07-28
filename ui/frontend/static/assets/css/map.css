@@ -1,0 +1,301 @@
+#map {
+    width: 100%;
+    height: 500px;
+    /*z-index: 1;*/
+    position: relative;
+    /**/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /**/
+}
+
+@media (min-height: 600px) {
+    #map {
+        height: 600px;
+    }
+}
+
+footer.lp {
+    /*z-index: 2;*/
+    /*position: relative;*/
+    /*width: 400px;*/
+    /*position: fixed;*/
+    /*right: 0;*/
+    /*left: 0;*/
+    /*bottom: 10px;*/
+}
+
+.lp .transport {
+    /*margin: 0 auto;*/
+    /*width:768px;*/
+}
+
+.lp .navbar {
+    margin-bottom: 0;
+}
+
+.lp .navbar-inner {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.lp #play-pause {
+    /*width: 18px;*/
+}
+
+.lp #speed-btn {
+    /*width: 58px;*/
+}
+
+.lp .ui-slider {
+    margin: 13px;
+}
+
+.lp #time-slider {
+    width: 355px;
+}
+
+.lp #calendar {
+    margin: 5px;
+}
+
+.leaflet-control-layers-list {
+    margin-bottom: 0;
+}
+
+.lp .speed-menu {
+    z-index: 10 !important;
+    min-width: 60px;
+    position:relative;
+}
+
+.lp .dropdown-menu {
+    padding: 5px;
+    text-align: center;
+}
+
+.lp #speed-slider {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lp .navbar .btn,
+.lp .navbar .btn-group {
+    margin-top: 0;
+    padding: 0;
+}
+
+.lp .navbar .nav > li > a.clock {
+    padding: 0 3px 0 3px;
+    text-align: center;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/*.lp li.ctrl {*/
+    /*background-color: #f5f5f5;*/
+    /**background-color: #e6e6e6;*/
+    /*background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);*/
+    /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));*/
+    /*background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);*/
+    /*background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);*/
+    /*background-image: linear-gradient(top, #ffffff, #e6e6e6);*/
+    /*background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);*/
+    /*background-repeat: repeat-x;*/
+    /*border-right: 1px solid #d4d4d4;*/
+
+    /*-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
+    /*-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
+    /*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
+/*}*/
+
+.lp .pull-right li.ctrl {
+    border-right: 0;
+    border-left: 1px solid #d4d4d4;
+}
+
+.lp li.ctrl:hover {
+    color: #333333;
+    text-decoration: none;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+    /* Buttons in IE7 don't get borders, so darken on hover */
+
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -ms-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+
+/*.lp li.ctrl:hover a {
+  color: #a9ff00;
+}*/
+
+.lp li.ctrl:active {
+    background-color: #e6e6e6;
+    background-color: #d9d9d9 \9;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/*Bootstrap interfering with leaflet*/
+input {
+    vertical-align: baseline;
+}
+
+label {
+    font-weight: bold;
+}
+
+/*bootstrap mod*/
+.navbar .nav {
+    margin: 0;
+}
+
+.navbar .nav > li > .dropdown-menu:before,
+.bootstrap-timepicker-widget.dropdown-menu:before {
+    top: auto;
+    bottom: -7px;
+    border-top: 7px solid #ccc;
+    border-bottom: 0;
+    border-top-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav > li > .dropdown-menu:after,
+.bootstrap-timepicker-widget.dropdown-menu:after {
+    top: auto;
+    bottom: -6px;
+    border-top: 6px solid #ffffff;
+    border-bottom: 0;
+}
+
+.playback-navbar ul {
+
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.playback-navbar ul li {
+    /*display: inline;*/
+    float: left;
+}
+
+.playback-navbar-inner li {
+    margin-right: 2px;
+}
+.playback-navbar li a {
+    display: block;
+}
+
+.map-container .groups {
+    line-height: 30px;
+}
+
+.map-icon {
+    transition: all 2s;
+}
+
+.leaflet-clickable {
+    cursor: pointer;
+}
+
+.leaflet-zoom-animated {
+    /*display: none;*/
+}
+
+.leaflet-overlay-pane {
+    /* Disables all SVG clickable elements // does not work if using vector icons */
+    /*https://github.com/Leaflet/Leaflet/issues/3359*/
+    pointer-events: none;
+    z-index: -1;
+}
+
+.leaflet-marker-pane {
+    z-index: 100;
+}
+
+#objectDetailsPanel .sim-marker {
+    max-width: 100px;
+    max-height: 80px;
+}
+
+.leaflet-div-icon {
+    background: none;
+    border: 0;
+}
+
+.sim-marker {
+    cursor: pointer;
+}
+
+.sim-marker-rectangle {
+    background: #666666;
+    border: 3px solid #333333;
+}
+
+.sim-marker-circle {
+    background: rgba(110, 57, 204, 0.6);
+    border: 3px solid rgba(10, 7, 104, 0.6);
+    border-radius: 50%;
+}
+
+.sim-marker-label {
+    background-clip: padding-box;
+    border-radius: 20px;
+    width: 35px;
+    position: relative;
+    top: 9px;
+    left: 9px;
+}
+
+.sim-marker-label div {
+    /*margin-top: -20px;*/
+    /*margin-left: -10px;*/
+    /*margin-left: -14px;*/
+    /*margin-top: 5px;*/
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+.sim-marker-label span {
+    line-height: 30px;
+}
+
+/*.uav-marker-label-green {
+    background-color: rgba(181, 226, 140, 0.6);
+}*/
+
+.sim-marker-label-green div {
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+/*.uav-marker-label-orange {
+    background-color: rgba(241, 211, 87, 0.6);
+}*/
+
+.sim-marker-label-orange div {
+    background-color: rgba(240, 194, 12, 0.6);
+}
+
+.sim-marker-label-red {
+    background-color: rgba(253, 156, 115, 0.6);
+}
+
+.sim-marker-label-red div {
+    background-color: rgba(241, 128, 23, 0.6);
+}
+
+.leaflet-marker-icon {
+    pointer-events: auto;
+}

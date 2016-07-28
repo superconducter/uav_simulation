@@ -1,0 +1,32 @@
+<div>
+    <div ng-hide="response.results.length == 0 && !view.search" class="form-inline">
+        <div ng-class="response.previous != null ? '' : 'disabled'" class="btn btn-default" ng-click="load(response.previous)">Previous</div>
+        <div ng-class="response.next ? '' : 'disabled'" class="btn btn-default" class="btn btn-default" ng-click="load(response.next)">Next</div>
+        <input type="text" ng-model="view.search" ng-change="load(undefined, view.search)" placeholder="Search" class="form-control"/>
+        <hr>
+     <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> Select Simulation</th>
+        <th> Simulation ID</th>
+        <th> # of Rounds</th>
+        <th> Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="simulation in response.results">
+        <td><a href="#/simulations/{{ simulation.id }}">{{ simulation.name }}</a></td>
+        <td>#{{ simulation.id }}</td>
+        <td>{{ simulation.rounds_count }}</td>
+        <td>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="delete(simulation.id)"> <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div ng-show="response.results.length == 0">
+        <p>There are no simulations, yet. They can be created at the <a href="#/settings">Settings</a> view.</p>
+    </div>
+</div>
